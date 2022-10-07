@@ -15,12 +15,12 @@ def SelectSort(l:list,order:str='asc'):
    
     if order=='asc':
         for i in range(len(l)):
-            for j in range(i+1,len(l)): #iterate over rest of the list
+            for j in range(i+1,len(l)): 
                 if l[i]>l[j]:
                     SwapItem(l,i,j)
     elif order=='desc':
         for i in range(len(l)):
-            for j in range(i+1,len(l)): #iterate over rest of the list
+            for j in range(i+1,len(l)):
                 if l[i]<l[j]:
                     SwapItem(l,i,j)
     return l

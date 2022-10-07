@@ -1,7 +1,7 @@
 from logging import raiseExceptions
 
 
-def BubbleSort(l:list,order:str='asc'):
+def InsertionSort(l:list,order:str='asc'):
     '''
     1st argument takes a list
     2nd kwargs defaults to 'asc' and takes either 'asc' for ascending and 'desc' for descending
@@ -12,15 +12,22 @@ def BubbleSort(l:list,order:str='asc'):
         raise ValueError('Order can only be \'asc\' or \'desc\'')
 
     if order=='asc':
-        for i in range(len(l)):
-            for j in range(1,len(l)-i):
-                if l[j-1]>l[j]:
-                    SwapItem(l,j-1,j)
+        for i in range(1,len(l)):
+            currItem=l[i]
+            j=i-1
+            while(j>=0 and l[j]>currItem):
+                l[j+1]=l[j]
+                j-=1
+            l[j+1]=currItem
+
     elif order=='desc':
-        for i in range(len(l)):
-            for j in range(1,len(l)-i):
-                if l[j-1]<l[j]:
-                    SwapItem(l,j-1,j)
+        for i in range(1,len(l)):
+            currItem=l[i]
+            j=i-1
+            while(j>=0 and l[j]<currItem):
+                l[j+1]=l[j]
+                j-=1
+            l[j+1]=currItem
 
     return l
 
@@ -32,7 +39,7 @@ def SwapItem(lst:list,idx1,idx2):
 
 if __name__=='__main__':
     exList=[3,5,9,2,1,4,7,6,8]
-    BubbleSort(exList,'asc')
+    InsertionSort(exList,'asc')
     print(f'In Ascending Order:\n{exList}')
-    BubbleSort(exList,'desc')
+    InsertionSort(exList,'desc')
     print(f'In Descending Order:\n{exList}')
