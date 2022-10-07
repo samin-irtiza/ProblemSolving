@@ -1,7 +1,7 @@
 from logging import raiseExceptions
 
 
-def SelectSort(l:list,order:str='asc'):
+def BubbleSort(l:list,order:str='asc'):
     '''
     1st argument takes a list
     2nd kwargs defaults to 'asc' and takes either 'asc' for ascending and 'desc' for descending
@@ -11,18 +11,17 @@ def SelectSort(l:list,order:str='asc'):
     if order is None or order not in ['asc','desc']:
         raise ValueError('Order can only be \'asc\' or \'desc\'')
 
-        
-   
     if order=='asc':
         for i in range(len(l)):
-            for j in range(i+1,len(l)): #iterate over rest of the list
-                if l[i]>l[j]:
-                    SwapItem(l,i,j)
+            for j in range(1,len(l)-i): #find and compare pairs
+                if l[j-1]>l[j]:
+                    SwapItem(l,j-1,j)
     elif order=='desc':
         for i in range(len(l)):
-            for j in range(i+1,len(l)): #iterate over rest of the list
-                if l[i]<l[j]:
-                    SwapItem(l,i,j)
+            for j in range(1,len(l)-i):
+                if l[j-1]<l[j]:
+                    SwapItem(l,j-1,j)
+
     return l
 
 def SwapItem(lst:list,idx1,idx2):
@@ -33,7 +32,7 @@ def SwapItem(lst:list,idx1,idx2):
 
 if __name__=='__main__':
     exList=[3,5,9,2,1,4,7,6,8]
-    SelectSort(exList,'asc')
+    BubbleSort(exList,'asc')
     print(f'In Ascending Order:\n{exList}')
-    SelectSort(exList,'desc')
+    BubbleSort(exList,'desc')
     print(f'In Descending Order:\n{exList}')
