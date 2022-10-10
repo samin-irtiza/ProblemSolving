@@ -1,6 +1,3 @@
-from logging import raiseExceptions
-
-
 def SelectSort(l:list,order:str='asc'):
     '''
     1st argument takes a list

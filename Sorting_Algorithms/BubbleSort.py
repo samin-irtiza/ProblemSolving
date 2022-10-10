@@ -1,6 +1,3 @@
-from logging import raiseExceptions
-
-
 def BubbleSort(l:list,order:str='asc'):
     '''
     1st argument takes a list
