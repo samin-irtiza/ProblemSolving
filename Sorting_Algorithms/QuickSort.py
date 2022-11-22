@@ -28,9 +28,9 @@ def QuickSort(l:list,order:str='asc'):
             pivot=mid
 
     if order=='asc':
-        l=QuickAsc(l,pivot)
+        pivot,l=QuickAsc(l,pivot)
     elif order=='desc':
-        l=QuickDesc(l,pivot)
+        pivot,l=QuickDesc(l,pivot)
 
     left=l[:pivot]
     right=l[pivot:]
@@ -50,7 +50,8 @@ def QuickAsc(a:list,pivot:int):
             j+=1
             SwapItem(a,i,j)
     SwapItem(a,pivot,j)
-    return a
+    print(a)
+    return j,a
 
 
 def QuickDesc(a:list,pivot:int):
@@ -63,7 +64,7 @@ def QuickDesc(a:list,pivot:int):
             j+=1
             SwapItem(a,i,j)
     SwapItem(a,pivot,j)
-    return a
+    return j,a
 
 def SwapItem(lst:list,idx1,idx2):
     if idx1!=idx2:
