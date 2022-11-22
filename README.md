@@ -1,1 +1,2 @@
-##This is my Data Structures and Algorithms code repository.
+# ProblemSolving
+Basic DSA problem solving
