@@ -50,7 +50,6 @@ def QuickAsc(a:list,pivot:int):
             j+=1
             SwapItem(a,i,j)
     SwapItem(a,pivot,j)
-    print(a)
     return j,a
 
 
