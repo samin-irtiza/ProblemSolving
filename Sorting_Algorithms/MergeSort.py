@@ -66,6 +66,7 @@ def MergeDesc(a:list,b:list):
 
 if __name__=='__main__':
     exList=[3,5,9,2,1,4,7,6,8]
+    # print("Original Array:\n{1}",{exList})
     exList=MergeSort(exList,'asc')
     print(f'In Ascending Order:\n{exList}')
     exList=MergeSort(exList,'desc')
