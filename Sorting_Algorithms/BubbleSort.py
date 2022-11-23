@@ -29,8 +29,8 @@ def SwapItem(lst:list,idx1,idx2):
 
 if __name__=='__main__':
     exList=[3,5,9,2,1,4,7,6,8]
-    BubbleSort(exList,'asc')
     print(f'Original Array: \n{exList}')
+    BubbleSort(exList,'asc')
     print(f'In Ascending Order:\n{exList}')
     BubbleSort(exList,'desc')
     print(f'In Descending Order:\n{exList}')
