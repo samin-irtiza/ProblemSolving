@@ -36,6 +36,7 @@ def SwapItem(lst:list,idx1,idx2):
 
 if __name__=='__main__':
     exList=[3,5,9,2,1,4,7,6,8]
+    print(f'Original Array: \n{exList}')
     InsertionSort(exList,'asc')
     print(f'In Ascending Order:\n{exList}')
     InsertionSort(exList,'desc')
